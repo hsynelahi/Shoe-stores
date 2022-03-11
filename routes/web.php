@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,5 +20,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::group(['prefix' => 'admin'] , function(){
-    Route::get('show' , [AdminController::class , 'show']);
+    Route::get('show/' , [AdminController::class , 'show']);
+    Route::get('products' , [ProductController::class , 'addproductview'])->name('admin.product.addview');
+    Route::get('manage/products' , [ProductController::class , 'showproduct'])->name('admin.product.show');
+    Route::post('add/product' , [ProductController::class , 'addproduct'])->name('admin.product.add');
 });
