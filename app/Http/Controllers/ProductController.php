@@ -15,29 +15,26 @@ class ProductController extends Controller
 
     public function showproduct()
     {
-        return view('admin.products.showproduct');
+        $products = Product::all();
+        return view('admin.products.showproduct',compact('products'));
     }
 
     public function addproduct(StoreRequest $request)
     {
         $validatedData = $request->validated();
 
-
-        $product = new Product;
-        $image = $request->image;
-        $imageName = time().'.'.$image->getClientOriginalExtension();
-        $request->image->move('productImage',$imageName);
-        $product->image = $imageName;
+        $newImageName = time() . '-' .$request->name . '.' . $request->image->extension();
+        $request->image->move(public_path('images'),$newImageName);
 
         $createdProduct = Product::create([
             'price' => $validatedData['price'],
             'description' => $validatedData['description'],
-            'image' => $validatedData['image'],
+            'image' => $newImageName,
         ]);
 
         if(!$createdProduct)
         {
-            return back()->with('failed','Failed to Add Product');
+            return back()->with('error','Failed to Add Product');
         }
         return back()->with('success','Product Added Successfully');
     }
