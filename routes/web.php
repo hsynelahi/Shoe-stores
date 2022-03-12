@@ -34,5 +34,7 @@ Route::group(['prefix' => 'admin'] , function(){
         Route::get('addusersshow/' , [UsersController::class , 'addusersshow'])->name('admin.users.addshow');
         Route::post('addusers/' , [UsersController::class , 'addusers'])->name('admin.users.addusers');
         Route::delete('{id}/delete/user/' , [UsersController::class , 'deleteusers'])->name('admin.users.deleteusers');
+        Route::get('{id}/edit/user/' , [UsersController::class , 'editusers'])->name('admin.users.editusers');
+        Route::put('{id}/update/user/' , [UsersController::class , 'updateusers'])->name('admin.users.updateusers');
     });
 });

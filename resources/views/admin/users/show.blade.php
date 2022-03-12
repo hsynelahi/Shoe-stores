@@ -23,7 +23,7 @@
                     <td>{{ $user->mobile }}</td>
                     <td>{{ $user->role }}</td>
                     <td>
-                        <button class="btn btn-success">Update</button>
+                        <a href="{{ route('admin.users.editusers',$user->id) }}" class="btn btn-success">Update</a>
                     </td>
                     <td>
                         <form action="{{ route('admin.users.deleteusers',$user->id) }}" method="POST">
