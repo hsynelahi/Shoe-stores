@@ -24,7 +24,7 @@
                     </td>
 
                     <td>
-                        <button class="btn btn-success">Update</button>
+                        <a href="{{ route('admin.product.updateshow',$product->id) }}" class="btn btn-success text-decoration-none text-white" >Update</a>
                     </td>
                     <td>
                         <form action="{{ route('admin.product.delete',$product->id) }}" method="POST">

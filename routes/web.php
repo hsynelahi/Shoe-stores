@@ -25,4 +25,6 @@ Route::group(['prefix' => 'admin'] , function(){
     Route::get('manage/products' , [ProductController::class , 'showproduct'])->name('admin.product.show');
     Route::post('add/product' , [ProductController::class , 'addproduct'])->name('admin.product.add');
     Route::delete('{id}/delete/product' , [ProductController::class , 'deleteproduct'])->name('admin.product.delete');
+    Route::get('{id}/updateshow/product' , [ProductController::class , 'updateshowproduct'])->name('admin.product.updateshow');
+    Route::put('{id}/update/product' , [ProductController::class , 'updateproduct'])->name('admin.product.update');
 });
