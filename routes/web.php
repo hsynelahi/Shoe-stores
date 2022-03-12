@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Admin\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,4 +28,10 @@ Route::group(['prefix' => 'admin'] , function(){
     Route::delete('{id}/delete/product' , [ProductController::class , 'deleteproduct'])->name('admin.product.delete');
     Route::get('{id}/updateshow/product' , [ProductController::class , 'updateshowproduct'])->name('admin.product.updateshow');
     Route::put('{id}/update/product' , [ProductController::class , 'updateproduct'])->name('admin.product.update');
+
+    Route::group(['prefix' => 'users'] , function(){
+        Route::get('showusers/' , [UsersController::class , 'showusers'])->name('admin.users.show');
+        Route::get('addusersshow/' , [UsersController::class , 'addusersshow'])->name('admin.users.addshow');
+        Route::post('addusers/' , [UsersController::class , 'addusers'])->name('admin.users.addusers');
+    });
 });
