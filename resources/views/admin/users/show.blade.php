@@ -16,58 +16,20 @@
                 <th>Action 2</th>
             </tr>
 
-            <tr>
-                <td>hossein</td>
-                <td>hossein@gmail.com</td>
-                <td>09906880923</td>
-                <td>admin</td>
-                <td>
-                    <button class="btn btn-success">Update</button>
-                </td>
-                <td>
-                    <button class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>hossein</td>
-                <td>hossein@gmail.com</td>
-                <td>09906880923</td>
-                <td>user</td>
-                <td>
-                    <button class="btn btn-success">Update</button>
-                </td>
-                <td>
-                    <button class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>hossein</td>
-                <td>hossein@gmail.com</td>
-                <td>09906880923</td>
-                <td>admin</td>
-                <td>
-                    <button class="btn btn-success">Update</button>
-                </td>
-                <td>
-                    <button class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>hossein</td>
-                <td>hossein@gmail.com</td>
-                <td>09906880923</td>
-                <td>user</td>
-                <td>
-                    <button class="btn btn-success">Update</button>
-                </td>
-                <td>
-                    <button class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
-
+            @foreach ($users as $user)           
+                <tr>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->mobile }}</td>
+                    <td>{{ $user->role }}</td>
+                    <td>
+                        <button class="btn btn-success">Update</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            @endforeach
         </table>
     </div>
 

@@ -11,11 +11,13 @@ class UsersController extends Controller
 {
     public function showusers()
     {
-        return view('admin.users.show');
+        $users = User::all();
+        return view('admin.users.show',compact('users'));
     }
 
     public function addusersshow()
     {
+        
         return view('admin.users.addusersshow');
     }
 
