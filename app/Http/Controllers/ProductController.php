@@ -38,4 +38,14 @@ class ProductController extends Controller
         }
         return back()->with('success','Product Added Successfully');
     }
+
+    public function deleteproduct($id)
+    {
+        $product = Product::find($id);
+
+        $product->delete();
+
+        return back()->with('success','Product Deleted Successfully');
+
+    }
 }

@@ -5,6 +5,7 @@
     @include('admin.sidebar')
   
     <div class="m-auto">
+        @include('errors.errors')
         <table class="table table-condensed">
             <tr class="thead-dark">
                 <th>Description</th>
@@ -26,7 +27,11 @@
                         <button class="btn btn-success">Update</button>
                     </td>
                     <td>
-                        <button class="btn btn-danger">Delete</button>
+                        <form action="{{ route('admin.product.delete',$product->id) }}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
