@@ -50,8 +50,16 @@ class UsersController extends Controller
 
     }
 
-    public function deleteusers()
+    public function deleteusers($id)
     {
+        $user = User::find($id);
 
+        $user->delete();
+
+        if(!$user)
+        {
+            return back()->with('error','Error : Faild to Delete User, Somthing might be Wrong');
+        }
+        return back()->with('success','User Deleted Successfully');
     }
 }

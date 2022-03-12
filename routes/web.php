@@ -33,5 +33,6 @@ Route::group(['prefix' => 'admin'] , function(){
         Route::get('showusers/' , [UsersController::class , 'showusers'])->name('admin.users.show');
         Route::get('addusersshow/' , [UsersController::class , 'addusersshow'])->name('admin.users.addshow');
         Route::post('addusers/' , [UsersController::class , 'addusers'])->name('admin.users.addusers');
+        Route::delete('{id}/delete/user/' , [UsersController::class , 'deleteusers'])->name('admin.users.deleteusers');
     });
 });

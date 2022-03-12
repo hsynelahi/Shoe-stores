@@ -26,7 +26,11 @@
                         <button class="btn btn-success">Update</button>
                     </td>
                     <td>
-                        <button class="btn btn-danger">Delete</button>
+                        <form action="{{ route('admin.users.deleteusers',$user->id) }}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
