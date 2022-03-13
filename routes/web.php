@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\PaymentsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Home\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,4 +48,8 @@ Route::group(['prefix' => 'admin'] , function(){
     Route::group(['prefix' => 'payments'] , function(){
         Route::get('showpayments/' , [PaymentsController::class, 'show'])->name('admin.payments.show');
     });
+});
+
+Route::group(['prefix' => ''] , function(){
+    Route::get('' , [HomeController::class , 'show'])->name('home.show');
 });
