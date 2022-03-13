@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\OrdersController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\UsersController;
@@ -36,5 +37,9 @@ Route::group(['prefix' => 'admin'] , function(){
         Route::delete('{id}/delete/user/' , [UsersController::class , 'deleteusers'])->name('admin.users.deleteusers');
         Route::get('{id}/edit/user/' , [UsersController::class , 'editusers'])->name('admin.users.editusers');
         Route::put('{id}/update/user/' , [UsersController::class , 'updateusers'])->name('admin.users.updateusers');
+    });
+
+    Route::group(['prefix' => 'orders'] , function(){
+        Route::get('showorders/' , [OrdersController::class, 'show'])->name('admin.orders.show');
     });
 });
