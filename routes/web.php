@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\OrdersController;
+use App\Http\Controllers\Admin\PaymentsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\UsersController;
@@ -41,5 +42,9 @@ Route::group(['prefix' => 'admin'] , function(){
 
     Route::group(['prefix' => 'orders'] , function(){
         Route::get('showorders/' , [OrdersController::class, 'show'])->name('admin.orders.show');
+    });
+
+    Route::group(['prefix' => 'payments'] , function(){
+        Route::get('showpayments/' , [PaymentsController::class, 'show'])->name('admin.payments.show');
     });
 });

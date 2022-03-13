@@ -20,8 +20,8 @@ return new class extends Migration
             $table->enum('status' ,['paid','unpaid']);
             $table->enum('gateway' ,['idpay','zarinpal']);
 
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('order_id');
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             
             $table->timestamps();
         });
