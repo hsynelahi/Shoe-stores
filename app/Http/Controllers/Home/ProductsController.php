@@ -6,12 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ProductsController extends Controller
 {
-    public function show()
+
+    public function productDetail()
     {
         $products = Product::all();
-        return view('home.all',compact('products'));
+        return view('home.products.productDetail',compact('products'));
     }
-    
+
 }

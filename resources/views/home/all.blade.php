@@ -12,12 +12,14 @@
 
         @include('home.navbar')
 
+		@include('home.slide')
+
 
 		@include('home.shop')
 
 
 
-		@include('home.products')
+		@include('home.products.showproducts')
 
 		
         @include('home.logo')

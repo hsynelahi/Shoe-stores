@@ -6,22 +6,10 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Home\ProductsController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::group(['prefix' => 'admin'] , function(){
     Route::get('show/' , [AdminController::class , 'show']);
@@ -50,6 +38,7 @@ Route::group(['prefix' => 'admin'] , function(){
     });
 });
 
-Route::group(['prefix' => ''] , function(){
+Route::group(['prefix' => '/'] , function(){
     Route::get('' , [HomeController::class , 'show'])->name('home.show');
+    Route::get('/product-detail' , [ProductsController::class , 'productDetail'])->name('home.productDetail.show');
 });
