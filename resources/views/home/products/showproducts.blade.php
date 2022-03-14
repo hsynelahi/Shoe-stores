@@ -11,11 +11,11 @@
             <div class="row row-pb-md w-100">
                 <div class="col-md-3 col-lg-3 mb-4 text-center">
                     <div class="product-entry border">
-                        <a href="{{ route('home.productDetail.show') }}" class="prod-img">
+                        <a href="{{ route('home.productDetail.show',$product->id) }}" class="prod-img">
                             <img src="/images/{{ $product->image }}" class="img-fluid" alt="Free html5 bootstrap 4 template">
                         </a>
                         <div class="desc">
-                            <h2><a href="{{ route('home.productDetail.show') }}">{{ $product->description }}</a></h2>
+                            <h2><a href="{{ route('home.productDetail.show',$product->id) }}">{{ $product->description }}</a></h2>
                             <span class="price">{{ $product->price }}</span>
                         </div>
                     </div>

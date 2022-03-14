@@ -38,7 +38,9 @@ Route::group(['prefix' => 'admin'] , function(){
     });
 });
 
+
+
 Route::group(['prefix' => '/'] , function(){
     Route::get('' , [HomeController::class , 'show'])->name('home.show');
-    Route::get('/product-detail' , [ProductsController::class , 'productDetail'])->name('home.productDetail.show');
+    Route::get('{id}/product-detail' , [ProductsController::class , 'productDetail'])->name('home.productDetail.show');
 });

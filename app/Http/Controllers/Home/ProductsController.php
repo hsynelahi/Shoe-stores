@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 class ProductsController extends Controller
 {
 
-    public function productDetail()
+    public function productDetail($id)
     {
-        $products = Product::all();
-        return view('home.products.productDetail',compact('products'));
+        $product = Product::find($id);
+        return view('home.products.productDetail',compact('product'));
     }
 
 }

@@ -27,42 +27,21 @@
 			<div class="container">
 				<div class="row row-pb-lg product-detail-wrap">
 					<div class="col-sm-8">
-						<div class="owl-carousel">
+						{{-- <div class="owl-carousel"> --}}
 							<div class="item">
 								<div class="product-entry border">
 									<a href="#" class="prod-img">
-										<img src="/home/images/item-1.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
+										<img src="/images/{{ $product->image }}" class="img-fluid" alt="Free html5 bootstrap 4 template">
 									</a>
 								</div>
 							</div>
-							<div class="item">
-								<div class="product-entry border">
-									<a href="#" class="prod-img">
-										<img src="/home/images/item-2.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
-									</a>
-								</div>
-							</div>
-							<div class="item">
-								<div class="product-entry border">
-									<a href="#" class="prod-img">
-										<img src="/home/images/item-3.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
-									</a>
-								</div>
-							</div>
-							<div class="item">
-								<div class="product-entry border">
-									<a href="#" class="prod-img">
-										<img src="/home/images/item-4.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
-									</a>
-								</div>
-							</div>
-						</div>
+						{{-- </div> --}}
 					</div>
 					<div class="col-sm-4">
 						<div class="product-desc">
-							<h3>Women's Boots Shoes Maca</h3>
+							<h3>{{ $product->description }}</h3>
 							<p class="price">
-								<span>$68.00</span> 
+								<span>$ {{ $product->price }}</span> 
 								<span class="rate">
 									<i class="icon-star-full"></i>
 									<i class="icon-star-full"></i>
@@ -72,7 +51,7 @@
 									(74 Rating)
 								</span>
 							</p>
-							<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+							<p>{{ $product->description }}</p>
 							<div class="size-wrap">
 								<div class="block-26 mb-2">
 									<h4>Size</h4>
