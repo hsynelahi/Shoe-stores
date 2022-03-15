@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Home\BasketController;
+use App\Http\Controllers\Home\CheckoutsController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\ProductsController;
 use Illuminate\Support\Facades\Route;
@@ -47,4 +48,5 @@ Route::group(['prefix' => '/'] , function(){
     Route::get('/showBasket' , [BasketController::class , 'showBasket'])->name('home.showBasket.show');
     Route::get('{product_id}/addToBasket' , [BasketController::class , 'addToBasket'])->name('home.addToBasket.add');
     Route::get('{product_id}/deleteBasket' , [BasketController::class , 'deleteBasket'])->name('home.deleteBasket.delete');
+    Route::get('/checkout' , [CheckoutsController::class , 'checkoutShow'])->name('home.checkout.show');
 });

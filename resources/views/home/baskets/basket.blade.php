@@ -103,7 +103,7 @@
 												<input type="text" name="quantity" class="form-control input-number" placeholder="Your Coupon Number...">
 											</div>
 											<div class="col-sm-3">
-												<input type="submit" value="Apply Coupon" class="btn btn-primary">
+												<a href="{{ route('home.checkout.show') }}" class="btn btn-primary">Order Now</a>
 											</div>
 										</div>
 									</form>
