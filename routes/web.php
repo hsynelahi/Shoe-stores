@@ -46,4 +46,5 @@ Route::group(['prefix' => '/'] , function(){
     Route::get('{id}/product-detail' , [ProductsController::class , 'productDetail'])->name('home.productDetail.show');
     Route::get('/showBasket' , [BasketController::class , 'showBasket'])->name('home.showBasket.show');
     Route::get('{product_id}/addToBasket' , [BasketController::class , 'addToBasket'])->name('home.addToBasket.add');
+    Route::get('{product_id}/deleteBasket' , [BasketController::class , 'deleteBasket'])->name('home.deleteBasket.delete');
 });

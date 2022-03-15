@@ -62,4 +62,18 @@ class BasketController extends Controller
             return back()->with('success','Add to Your Shopping Cart Successfully');
 
     }
+
+    public function deleteBasket($product_id)
+    {
+        $basket = json_decode(Cookie::get('basket'), true);
+
+        if(isset($basket[$product_id]))
+        {
+            unset($basket[$product_id]);
+        }
+
+        Cookie::queue('basket',json_encode($basket),$this->minutes);
+
+        return back()->with('success','Item Deleted Successfully');
+    }
 }

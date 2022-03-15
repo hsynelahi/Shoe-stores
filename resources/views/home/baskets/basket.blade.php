@@ -83,7 +83,7 @@
 								
 								<div class="one-eight text-center">
 									<div class="display-tc">
-										<a href="#" class="closed"></a>
+										<a href="{{ route('home.deleteBasket.delete', $id) }}">x</a>
 									</div>
 								</div>
 							</div>
