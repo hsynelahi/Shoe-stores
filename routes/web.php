@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\PaymentsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Home\BasketController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\ProductsController;
 use Illuminate\Support\Facades\Route;
@@ -43,4 +44,5 @@ Route::group(['prefix' => 'admin'] , function(){
 Route::group(['prefix' => '/'] , function(){
     Route::get('' , [HomeController::class , 'show'])->name('home.show');
     Route::get('{id}/product-detail' , [ProductsController::class , 'productDetail'])->name('home.productDetail.show');
+    Route::get('/showBasket' , [BasketController::class , 'showBasket'])->name('home.showBasket.show');
 });
