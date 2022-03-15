@@ -116,7 +116,7 @@
 											<p><span>Discount:</span> <span>$45.00</span></p>
 										</div>
 										<div class="grand-total">
-											<p><span><strong>Total:</strong></span> <span>$450.00</span></p>
+											<p><span><strong>Total:</strong></span> <span>$ {{ array_sum(array_column(json_decode(Cookie::get('basket'), true), 'price')) }}</span></p>
 										</div>
 									</div>
 								</div>
