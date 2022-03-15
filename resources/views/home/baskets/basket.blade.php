@@ -52,46 +52,44 @@
 								<span>Price</span>
 							</div>
 							<div class="one-eight text-center">
-								<span>Quantity</span>
+								<span>Description</span>
 							</div>
-							<div class="one-eight text-center">
-								<span>Total</span>
-							</div>
+
 							<div class="one-eight text-center px-4">
 								<span>Remove</span>
 							</div>
 						</div>
 						
                         
-						<div class="product-cart d-flex">
-							<div class="one-forth">
-								<div class="product-img" style="background-image: url(images/item-8.jpg);">
+						@foreach (json_decode(Cookie::get('basket'), true) as $id => $value)
+							<div class="product-cart d-flex">
+								<div class="one-forth">
+									<div class="product-img" style="background-image: url(/images/{{ $value['image'] }});">
+									</div>
+									<div class="display-tc">
+										<h3></h3>
+									</div>
 								</div>
-								<div class="display-tc">
-									<h3>Product Name</h3>
+								<div class="one-eight text-center">
+									<div class="display-tc">
+										<span class="price">$ {{ $value['price'] }} </span>
+									</div>
 								</div>
-							</div>
-							<div class="one-eight text-center">
-								<div class="display-tc">
-									<span class="price">$68.00</span>
+								<div class="one-eight text-center">
+									<div class="display-tc">
+										<span class="price"> {{ $value['description'] }} </span>
+									</div>
 								</div>
-							</div>
-							<div class="one-eight text-center">
-								<div class="display-tc">
-									<input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="1" min="1" max="100">
-								</div>
-							</div>
-							<div class="one-eight text-center">
-								<div class="display-tc">
-									<span class="price">$120.00</span>
-								</div>
-							</div>
-							<div class="one-eight text-center">
-								<div class="display-tc">
-									<a href="#" class="closed"></a>
+								
+								<div class="one-eight text-center">
+									<div class="display-tc">
+										<a href="#" class="closed"></a>
+									</div>
 								</div>
 							</div>
-						</div>
+						@endforeach
+
+
 					</div>
 				</div>
 				<div class="row row-pb-lg">

@@ -97,7 +97,7 @@
 
                   			<div class="row">
 								<div class="col-sm-12 text-center">
-									<p class="addtocart"><a href="#" class="btn btn-primary btn-addtocart"><i class="icon-shopping-cart"></i> Add to Cart</a></p>
+									<p class="addtocart"><a href="{{ route('home.addToBasket.add',$product->id) }}" class="btn btn-primary btn-addtocart"><i class="icon-shopping-cart"></i> Add to Cart</a></p>
 								</div>
 							</div>
 
