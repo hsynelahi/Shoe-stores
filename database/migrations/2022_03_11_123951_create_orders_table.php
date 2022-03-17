@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('amount');
-            $table->char('ref_id')->nullable();
+            $table->unsignedBigInteger('amount')->nullable();
+            $table->unsignedBigInteger('ref_id')->nullable();
+            $table->unsignedBigInteger('res_id')->nullable();
             $table->enum('status', ['paid','unpaid'])->nullable();
 
             $table->unsignedBigInteger('user_id');

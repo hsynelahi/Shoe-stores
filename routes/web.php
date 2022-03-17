@@ -49,4 +49,7 @@ Route::group(['prefix' => '/'] , function(){
     Route::get('{product_id}/addToBasket' , [BasketController::class , 'addToBasket'])->name('home.addToBasket.add');
     Route::get('{product_id}/deleteBasket' , [BasketController::class , 'deleteBasket'])->name('home.deleteBasket.delete');
     Route::get('/checkout' , [CheckoutsController::class , 'checkoutShow'])->name('home.checkout.show');
+    Route::post('/order' , [CheckoutsController::class , 'addorder'])->name('home.addorder.add');
+    Route::post('/PayResult' , [CheckoutsController::class , 'PayResult'])->name('home.PayResult.add');
+    
 });
